@@ -1,6 +1,7 @@
 # ABBDD_P02
-Administración de Bases de Datos - Práctica 02 (Viveros)
+Práctica 02 - Administración de Bases de Datos Realizada por Andrés Hernández Ortega y Luka Kravarusic Sljapic
 
+Proyecto draw.io: 
 
 
 
