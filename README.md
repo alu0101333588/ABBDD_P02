@@ -28,7 +28,7 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 * Cada zona tiene un NOMBRE único
 * Cada zona se encuentra en una LATITUD y LONGITUD
 * Cada zona tiene un TIPO asociado
-* Cada zona tiene un atributo calculado PRODUCTIVIDAD que se calcula en * base al atributo PRODUCTIVIDAD de la entidad EMPLEADO
+* Cada zona tiene un atributo calculado PRODUCTIVIDAD que se calcula en base al atributo PRODUCTIVIDAD de la entidad EMPLEADO
 * **Identificador**: NOMBRE
 
 ### Ejemplo
