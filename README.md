@@ -9,10 +9,11 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 
 # Entidades definidas
 ## Vivero
-
+* Un vivero forma parte de una red de viveros que se pueden dedicar a la venta de plantas, productos de jardinería y decoración
 * Un vivero posee un NOMBRE
 * Contiene un identificador ID único
 * Se encuentra ubicado en una LATITUD y LONGITUD
+* Se encuentra ubicado en un MUNICIPIO y una PROVINCIA
 * **Identificador**: ‘Id’
 
 ### Ejemplo
@@ -27,9 +28,9 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 ## Zona
 * Cada zona tiene un NOMBRE único
 * Cada zona se encuentra en una LATITUD y LONGITUD
-* Cada zona tiene un TIPO asociado
+* Cada zona tiene un TIPO asociado que es único (zona exterior, almacén, etc.)
 * Cada zona tiene un atributo calculado PRODUCTIVIDAD que se calcula en base al atributo PRODUCTIVIDAD de la entidad EMPLEADO
-* **Identificador**: NOMBRE
+* **Identificadores**: 'Nombre' y 'Tipo'
 
 ### Ejemplo
 * ID: 0040
@@ -59,9 +60,9 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 ## Producto
 * Cada producto tiene un ID único
 * Cada producto tiene un NOMBRE
-* Cada producto es de un TIPO
+* Cada producto es de un TIPO (por ejemplo, plantas, productos de jardinería y decoración a través de su red de viveros)
 * Cada producto está catalogado a un PRECIO
-* **Identificador**: ID
+* **Identificador**: 'Id'
 
 ### Ejemplo
 - ID: 100078
@@ -70,23 +71,25 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 - PRECIO: 45€
 
 ## Pedido
-* Cada pedido tiene un NUMERO PEDIDO
+* Los pedidos son realizados por los diferentes clientes, tantos los registrados en el Tajinaste Plus como los que no lo están
+* Cada pedido tiene un NÚMERO de PEDIDO que es único 
 * Cada pedido tiene una FECHA en la que se ha realizado
-* **Identificador**: NUMERO PEDIDO
+* **Identificador**: 'Número Pedido'
 
 ### Ejemplo
 * NUMERO PEDIDO: 10050
 * FECHA: ‘10-10-2024’
 
 ## Cliente Tajinaste Plus
+* Son únicamente los clientes que pertenecen al programa Tajinaste Plus
 * Un cliente cuenta con un identificador ID único
 * Posee un NOMBRE
 * Cuenta con unos APELLIDOS (atributo compuesto):
 	* PRIMER APELLIDO
 	* SEGUNDO APELLIDO
 * Según la fecha en la que se haya dado de alta en el programa cuenta con una FECHA DE INGRESO
-* Los clientes cuentan con una BONIFICACIÓN en función del número de compras que realicen
-* **Identificador**: ID
+* Los clientes cuentan con una BONIFICACIÓN en función del número de compras que realicen (atributo calculado)
+* **Identificador**: 'Id'
 
 ### Ejemplo
 * ID: 0035
@@ -101,7 +104,7 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 # Relaciones entre entidades
 ## Vivero-zona
 * Un vivero puede tener una o varias zonas.
-* Una zona puede estar en un vivero.
+* Una zona tiene que estar en único vivero.
 
 ## Zona-Empleado
 * En una zona puede trabajar uno o varios empleados, pero sólo en una única epoca del año, clasificada en Invierno, Primavera, Verano y Otoño.
@@ -120,7 +123,7 @@ Proyecto draw.io: https://drive.google.com/file/d/17MgRfRyU7QS2GPIPZw6tTKoTyzIJD
 
 ## Empleado-Pedido
 * Un empleado puede gestionar uno o varios pedidos
-* Un pedido puede ser gestionado por un empleado.
+* Un pedido solo puede ser gestionado por un empleado.
 
 
 ## Pedido-Cliente Tajinaste Plus
